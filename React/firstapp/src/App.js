@@ -1,12 +1,21 @@
 import React from 'react';
-import Table from './Table/Table';
-import Navbar from './Navbar/Navbar';
+import { render } from 'react-dom';
+import Product from './Props/Product';
+import Cart from './Props/Cart';
+
 
 function App(){
   return(
     <>
-      <Navbar/>,
-   <Table/>
+    <Cart item="1"/>
+    <Product productName="IPhone12"/>
+    <Cart item="2"/>
+    <Product productName="IPhone11"/>
+    <Product productName="IPhone12"/>
+    
+   
+   
+    
  
    </>
   );
