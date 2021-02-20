@@ -1,23 +1,12 @@
 import React from 'react';
-import { render } from 'react-dom';
-import Product from './Props/Product';
-import Cart from './Props/Cart';
-
-
-function App(){
+// import Navbar from'./Navbar/Navbar';
+import Form from './State/Form/Form' ;
+import Employee1 from './State/Employee1';
+function App (){
   return(
     <>
-    <Cart item="1"/>
-    <Product productName="IPhone12"/>
-    <Cart item="2"/>
-    <Product productName="IPhone11"/>
-    <Product productName="IPhone12"/>
-    
-   
-   
-    
- 
-   </>
+    <Form/>
+    </>
   );
 }
 export default App;
