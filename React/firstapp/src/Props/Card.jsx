@@ -1,11 +1,12 @@
 import React from "react";
 
 let Card= (props)=>{
-  
+  let name="ashish"
     return(
         <>
-        <h1>Hello {props.name}</h1><hr/><h5> {props.id} 
-        </h5>     </>
+        <h1>Hello:{props.name}</h1><hr/>
+        <h5>id: </h5>    
+         </>
     );
     
 }
