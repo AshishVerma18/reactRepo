@@ -17,6 +17,7 @@ const DynamicGreet=(props)=>{
             <h3>Hello {props.name} </h3>
 
             </div>
+
             <div className="card-footer">
             <h4>Wish You {greeting}</h4>
             </div>

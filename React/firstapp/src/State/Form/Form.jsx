@@ -7,7 +7,7 @@ class Form extends Component{
     }
     update=(e)=>{
         this.setState({
-            value:e.target.value.toUpperCase()
+           [e.target.name]:e.target.value.toUpperCase()
 
         
         
@@ -18,9 +18,9 @@ class Form extends Component{
             <>
             <form>
            <h4>Enter Name </h4>
-           <input type="text" placeholder="Name" value= {this.state.value} onChange={this.update}/>
+           <input type="text" placeholder="Name" value= {this.state.value} onChange={this.update} name="Emp_name" />
            
-           <h4>Empoloyee Name is: {this.state.value}</h4>
+           <h4>{JSON.stringify(this.state)}</h4>
            
            
             </form>
