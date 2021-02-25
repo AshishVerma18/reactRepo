@@ -52,7 +52,7 @@ render(){
                                 </div>
 
                                 <div className="card-footer">
-                                <button className="btn btn-success" onClick={this.btnHandler}>SignUp</button>
+                                <button className="btn btn-success" onClick={this.btnHandler}>Register</button>
                                
 
                                 </div>

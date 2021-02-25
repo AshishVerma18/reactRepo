@@ -1,12 +1,12 @@
 import React from 'react';
+import ParentCard from './TwoWayBinding/ParentCard';
 //import Login from './FormHandling/Login'
-import Registration from './FormHandling/Registration';
-
+//import Registration from './FormHandling/Registration';
 
 function App (){
   return(
     <>
-   <Registration/>
+   <ParentCard/>
 
    </> 
   );
