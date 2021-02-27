@@ -9,19 +9,28 @@ class ParentCard extends Component{
 
         };
     }
-    parentMethod=(e)=>{
+    
+   parentMethod=(e)=>{
         this.setState({
-            pData:e.target.value,
+            pData:e.target.value
+            
           
         });
-
+       
+        e.preventDefault();
+    
 
     };
-    fetchMethod=(value)=>{
+    sendToChild=()=>{
+        return this.state.pData;
+    }
+   
+      fetchMethod=(value)=>{
         this.setState({
             cData:value,
         });
     };
+
 
     
     render(){
@@ -41,14 +50,14 @@ class ParentCard extends Component{
                                 <div className="form-group">
                                 <label >Parent Input</label>
                                 <input className="form-control" type="text" onChange={this.parentMethod}/>
-                                   
+                                <button onClick={this.sendToChild}>Send</button> 
                                 </div>
                             </form>
                             
                             
                         </div>
                         </div>
-                        <ChildCard sentData= {this.state.pData} fetchMethod={this.fetchMethod}/> 
+                        <ChildCard sentData = {this.state.pData} fetchMethod={this.fetchMethod}/> 
                     </div>
 
                 </div>

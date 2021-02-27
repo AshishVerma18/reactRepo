@@ -30,6 +30,7 @@ class ChildCard extends Component{
                         <label >Child Input</label>
                         <input className="form-control" type="text" onChange={this.childMethod}/>
                   </div>
+                  <button onClick={this.props.fetchMethod}> click</button>
                 </form>
                 </div>
             </div>
