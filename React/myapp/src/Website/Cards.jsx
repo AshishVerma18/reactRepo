@@ -14,7 +14,9 @@ class Cards extends Component{
     render(){
         return(
             <>
-             {sData.map(this.newData)};
+            
+                         {sData.map(this.newData)};
+               
             </>
         )
     }
