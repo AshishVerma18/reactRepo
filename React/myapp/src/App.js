@@ -1,36 +1,22 @@
-import React, { Component, createContext } from 'react';
-import CompA from './ContextApi/CompA';
-const MyContext=createContext();
+import React from 'react';
+import Navbar from './Website/Navbar';
+import MainPage from'./Website/MainPage';
+import Cards from './Website/Cards';
+import Contacts from './Website/Contacts';
+import Footer from './Website/Footer';
 
+import'./App.css'
 
-class App extends Component{
-  state={
-  
-    name:"Ashish",
-    age:25
-
-}
-  btnHandler=()=>{
-    this.setState({
-      name:"Manish",
-      age:19
-    })
-  }
-render(){
-  const data={
-    pData:this.state,
-    cData:this.btnHandler
-  }
-  return (
-    <>
-        <MyContext.Provider value={data}>
-        <CompA/>        
-        </MyContext.Provider>
+let App=()=>{
+  return(
+    <> 
+    <Navbar/>
+    <MainPage/>
+    <Cards/>
+    <hr/>
+    <Contacts/>
+    <Footer/>
     </>
-  
-  );
+  )
 }
-}
-
 export default App;
-export {MyContext};
