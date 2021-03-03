@@ -16,13 +16,22 @@ const FormEvent=()=>{
     };
     return(
         <>
-        <div>
-        <h2>Hello {fullname} </h2>
-        <form>
-        <input type="text" placeholder="Enter Your Name" onChange={formHandler} value={data}/><br/><br/>
-       
-        <button onClick={btnHandler}>Submit</button>
-        </form>
+        <div className="conatiner m-5">
+            <div className="row l-5 ">
+                <div className="col md-3">
+                    <div className="card w-25 bg-dark text-white">
+                        <h2>Hello {fullname} </h2>
+                        <div className="card-info">
+                        <form>
+                             <input className="form-control" type="text" placeholder="Enter Your Name" onChange={formHandler} value={data}/><br/><br/>
+                             <button className="btn btn-success" onClick={btnHandler}>Submit</button>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
         </div>
         </>
     );
