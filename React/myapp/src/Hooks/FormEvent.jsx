@@ -17,9 +17,9 @@ const FormEvent=()=>{
     return(
         <>
         <div className="conatiner m-5">
-            <div className="row l-5 ">
+            <div className="row ">
                 <div className="col md-3">
-                    <div className="card w-25 bg-dark text-white">
+                    <div className="card w-25 bg-dark">
                         <h2>Hello {fullname} </h2>
                         <div className="card-info">
                         <form>
