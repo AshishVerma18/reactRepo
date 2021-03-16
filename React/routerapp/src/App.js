@@ -1,12 +1,14 @@
 import React from 'react';
-import Menu from './Components/Menu';
+import Navbar from './Redux/Navbar/Navbar';
+import Home from './Redux/Home/Home'
+import './App.css'
 function App() {
   return (
     <>
-    
-    <Menu/>
+      <Navbar/>
+      <Home/>    
     </>
-   
+
   );
 }
 
