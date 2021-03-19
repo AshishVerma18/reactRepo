@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 import Cart from './Components/Cart';
 import Filter from './Components/Filter';
 import Products from './Components/Products';
-
+import {Provider} from 'react-redux';
 import data from './data.json';
+import store from './store';
 
 class  App extends Component {
   constructor(){
@@ -16,46 +17,46 @@ class  App extends Component {
       sort:"",
     };
   }
-  sortProducts=(event)=>{
-    const sort=event.target.value;
-    console.log(event.target.value);
-    this.setState({
+  // sortProducts=(event)=>{
+  //   const sort=event.target.value;
+  //   console.log(event.target.value);
+  //   this.setState({
     
-      sort:sort,
-      products:this.state.products.slice().sort((a,b)=>
-        sort==="lowest"
-        ? a.price > b.price
-         ? 1
-         :-1
-        :sort==="highest"
-        ? a._price < b._price
-          ?1
-          :-1
-        :a._id < b._id
-        ? 1
-        : -1
-      ),
-    })
-  }
-  filterProducts=(event)=>{
-    if(event.target.value===""){
-      this.setState({
+  //     sort:sort,
+  //     products:this.state.products.slice().sort((a,b)=>
+  //       sort==="lowest"
+  //       ? a.price > b.price
+  //        ? 1
+  //        :-1
+  //       :sort==="highest"
+  //       ? a._price < b._price
+  //         ?1
+  //         :-1
+  //       :a._id < b._id
+  //       ? 1
+  //       : -1
+  //     ),
+  //   })
+  // }
+  // filterProducts=(event)=>{
+  //   if(event.target.value===""){
+  //     this.setState({
         
-        size:event.target.value,
-        products:data.products,
-      });
-    }
-    else{
-      this.setState({
-        size:event.target.value,
-        products:data.products.filter(
-        (product)=>product.availableSizes.indexOf(event.target.value)>=0
-        ),
-      });
-    }
+  //       size:event.target.value,
+  //       products:data.products,
+  //     });
+  //   }
+  //   else{
+  //     this.setState({
+  //       size:event.target.value,
+  //       products:data.products.filter(
+  //       (product)=>product.availableSizes.indexOf(event.target.value)>=0
+  //       ),
+  //     });
+  //   }
     
     
-  };
+  // };
   removeFromCart=(product)=>{
     const cartItems=this.state.cartItems.slice();
     this.setState({cartItems:cartItems.filter(x=>x._id !== product._id)});
@@ -85,7 +86,9 @@ class  App extends Component {
   };
   render(){
     return (
+      <Provider store={store}>
     <>
+  
     <div className="grid-container">
       <header>
         <a className="grid-container" href="/">Shopping Cart</a>
@@ -93,12 +96,14 @@ class  App extends Component {
       <main>
        <div className="content">
          <div className="main">
-           <Filter count={this.state.products.length}
+           <Filter/> 
+           {/* count={this.state.products.length}
            size={this.state.size}
            sort={this.state.sort}
            filterProducts={this.filterProducts}
-           sortProducts={this.sortProducts}/>
-           <Products products={this.state.products} addToCart={this.addToCart}/>
+           sortProducts={this.sortProducts}/> */}
+           <Products  addToCart={this.addToCart}/>
+           {/* //products={this.state.products} */}
          </div>
          <div className="sidebar">
          <Cart cartItems={this.state.cartItems} 
@@ -111,7 +116,9 @@ class  App extends Component {
         All rights reserved
       </footer>
       </div> 
+    
     </>
+    </Provider>
     
     
   );

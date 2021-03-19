@@ -3,13 +3,19 @@ import formatCurrency from '../util'
 import Fade from 'react-reveal/Fade';
 import Modal from 'react-modal';
 import Zoom from 'react-reveal/Zoom';
+import { connect } from 'react-redux';
+import { fetchAction } from '../actions/action';
 
-export default class Products extends Component {
+
+class Products extends Component {
     constructor(props) {
         super();
         this.state = {
             product: null,
         };
+    }
+    componentDidMount() {
+        this.props.fetchAction();
     }
     openModal = (product) => {
         this.setState({ product })
@@ -24,7 +30,8 @@ export default class Products extends Component {
         return (
             <>
                 <Fade bottom cascade>
-                    <ul className="products">
+                    {!this.props.products ? (<div>Loading...</div>) :(
+                         <ul className="products">
                         {this.props.products.map(product => (
                             <li key={product._id}>
                                 <div className="product">
@@ -40,16 +47,18 @@ export default class Products extends Component {
                                         </div>
                                         <button onClick={() => this.props.addToCart(product)} className="button primary">
                                             Add To Cart
-                                 </button>
+                                  </button>
 
                                     </div>
                                 </div>
 
                             </li>
                         ))}
-                    </ul>
+                    </ul>)
+                    }
+
                 </Fade>
-                {product &&( <Modal isOpen={true} onRequestClose={this.closeModal}>
+                {product && (<Modal isOpen={true} onRequestClose={this.closeModal}>
                     <Zoom>
                         <button className="close-modal" onClick={this.closeModal}>x</button>
                         <div className="product-details">
@@ -90,3 +99,4 @@ export default class Products extends Component {
         )
     }
 }
+export default connect((state) => ({ products: state.products.items }), { fetchAction })(Products);

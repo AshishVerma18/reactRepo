@@ -1,14 +1,24 @@
 import React from 'react';
-import ParentCard from './TwoWayBinding/ParentCard';
-//import Login from './FormHandling/Login'
-//import Registration from './FormHandling/Registration';
 
-function App (){
-  return(
+import Page from './Pagination/Page';
+
+function App() {
+
+
+  return (
     <>
-   <ParentCard/>
+      <div className="conatiner">
+        <div className="row">
+          <div className="col-6">
+            <h1 className="text-primary mb-3">Pagination</h1>
+            <Page />
 
-   </> 
+          </div>
+        </div>
+
+      </div>
+
+    </>
   );
 }
 export default App;
@@ -27,4 +37,7 @@ export default App;
 //import Form from './State/Form/Form' ;
 // import Employee1 from './State/Employee1';
 //import Form from './State/Form/Form' ;
+//import Registration from './FormHandling/Registration';
+// import ParentCard from './TwoWayBinding/ParentCard';
+//import Login from './FormHandling/Login'
 //import Registration from './FormHandling/Registration';
