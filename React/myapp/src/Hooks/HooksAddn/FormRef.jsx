@@ -18,9 +18,9 @@ import React,{useRef,useState} from 'react';
                 <div className="col-6">
                     <form>
                         <div className="form-group">
-                            <input type="text" className="form-control" placeholder="Enter Your Name"/>
-                            <input type="text" className="form-control" placeholder="Enter Your Name"/>
-                            <input type="text" className="form-control" placeholder="Enter Your Name"/>
+                            <input type="text" className="form-control mt-1" placeholder="Enter Your Name"/>
+                            <input type="email" className="form-control mt-1" placeholder="Enter Your Email"/>
+                            <input type="number" className="form-control mt-1" placeholder="Enter Your Mobile"/>
                             <input type="checkbox" onClick={btnHandler} />{" "}I Accept the condition
                             <button className="btn btn-success ml-3"ref={btnRef} disabled={btn.disabled}>Submit</button>
                         </div>
