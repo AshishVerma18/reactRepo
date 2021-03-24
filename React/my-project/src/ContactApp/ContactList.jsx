@@ -1,6 +1,9 @@
 import React from 'react'
 
  const ContactList = (props) => {
+     let pushData=(contact)=>{
+         props.pullData(contact);
+     }
 
     return (
         <>
@@ -8,27 +11,28 @@ import React from 'react'
               <div className="row">
                   <div className="col">
                       <table className="table table-hover stripped table-warning">
-                          <thead>
+                          <thead className="bg-success text-white">
                               <tr>
-                                  <th className="text-danger">Name</th>
-                                  <th className="text-danger">Image</th>
-                                  <th className="text-danger">Email</th>
-                                  <th className="text-danger">Location</th>
-                                  <th className="text-danger">DOB</th>
+                                  <th>Name</th>
+                                  <th>Image</th>
+                                  <th>Email</th>
+                                  <th>Location</th>
+                                  <th>DOB</th>
                               </tr>
                           </thead>
                           <tbody>
                              {props.contacts.length>0?(
                                  <>
-                                 {props.contacts.map((item)=>{
-                                     return(<tr>
-                                        <td>{item.name.first}{" "}{item.name.last}</td>
+                                 {props.contacts.map((contact)=>{
+                                     return(
+                                     <tr key={contact.login.uuid} onMouseOver ={pushData.bind(this,contact)}>
+                                        <td>{contact.name.first}{" "}{contact.name.last}</td>
                                         <td>
-                                            <img src={item.picture.medium} alt="item"/>
+                                            <img src={contact.picture.medium} alt="contact"/>
                                         </td>
-                                        <td>{item.email}</td>
-                                        <td>{item.location.city}</td>
-                                        <td>{item.dob.age}</td>
+                                        <td>{contact.email}</td>
+                                        <td>{contact.location.city}</td>
+                                        <td>{contact.dob.age}</td>
                                     </tr>)
                                      
                                  })}
