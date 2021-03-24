@@ -5,11 +5,33 @@ import React,{useRef,useState} from 'react';
      const[btn,setBtn]=useState({
          disabled:true,
      })
-     let btnHandler=()=>{
-         btnRef.current.button=setBtn({
+     let btnHandler=(e)=>{
+       if(!e.target.checked){
+           btnRef.current.button=setBtn({
+               disabled:true,
+           })
+       }else{
+        btnRef.current.button=setBtn({
             disabled:false,
-         })
-
+        })
+       }
+        
+           
+             
+             
+         
+            // setBtn({ disabled:e.target.checked})
+            //  btnRef.current.disabled = btn.disabled;
+            // if(!e.target.checked){
+            //     btnRef.current.button=setBtn({
+            //         disabled:false,
+            //     })
+                 
+            //  }else{
+            //     btnRef.current.button=setBtn({
+            //         disabled:false,
+            //     })
+      
      }
     return (
         <>
@@ -21,8 +43,8 @@ import React,{useRef,useState} from 'react';
                             <input type="text" className="form-control mt-1" placeholder="Enter Your Name"/>
                             <input type="email" className="form-control mt-1" placeholder="Enter Your Email"/>
                             <input type="number" className="form-control mt-1" placeholder="Enter Your Mobile"/>
-                            <input type="checkbox" onClick={btnHandler} />{" "}I Accept the condition
-                            <button className="btn btn-success ml-3"ref={btnRef} disabled={btn.disabled}>Submit</button>
+                            <input type="checkbox" onClick={btnHandler}/>{" "}I Accept the condition
+                            <button className="btn btn-success m-3" ref={btnRef} disabled={btn.disabled}>Submit</button>
                         </div>
                     </form>
                 </div>
