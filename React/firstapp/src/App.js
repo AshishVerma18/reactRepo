@@ -1,22 +1,14 @@
 import React from 'react';
+import Form from './State/Form/Form';
 
-import Page from './Pagination/Page';
+
 
 function App() {
 
 
   return (
     <>
-      <div className="conatiner">
-        <div className="row">
-          <div className="col-6">
-            <h1 className="text-primary mb-3">Pagination</h1>
-            <Page />
-
-          </div>
-        </div>
-
-      </div>
+    <Form/>
 
     </>
   );
@@ -24,7 +16,7 @@ function App() {
 export default App;
 
 
-
+// import Page from './Pagination/Page';
 
 //import Add from './Practice/Add';
 //import DynamicGreet from './Practice/DynamicGreet';
