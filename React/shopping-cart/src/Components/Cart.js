@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import formatCurrency from '../util';
-import Flip from 'react-reveal/Flip'
+import Flip from 'react-reveal/Flip';
 export default class Cart extends Component {
     constructor(props){
         super(props);
