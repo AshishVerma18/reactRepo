@@ -2,14 +2,18 @@ const http=require("http");
 const fs=require("fs");
 const path=require("path");
 const server=http.createServer((req,res)=>{
+    const data = fs.readFileSync(`${__dirname}/userApi.json`,"utf-8");
+     const objData=JSON.parse(data);
     // console.log(req.url)
     if(req.url=="/"){
         res.end("response given from home");
     }else  if(req.url=="/userapi"){
-        fs.readFile(path.join(__dirname,"UserApi","userApi.json"),"utf-8",(err,data)=>{
-            console.log(data);
-        })
-        res.end("response given from userAPI")
+        res.writeHead(200,{"content-type":"application/json"});
+        
+         res.end(objData[0].title);
+            
+        
+        
     }
     else{
         res.writeHead(404,{"Content-type":"text/html"});
