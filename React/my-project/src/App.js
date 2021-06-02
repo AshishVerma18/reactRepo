@@ -1,6 +1,7 @@
 import React from 'react';
+import NcontactApp from './NewContactApp/nContactApp';
 // import ChallengeApp from './Challenge/ChallengeApp';
-import ContactApp from './ContactApp/ContactApp';
+// import ContactApp from './ContactApp/ContactApp';
 
 
 
@@ -8,7 +9,7 @@ import ContactApp from './ContactApp/ContactApp';
 let App=()=> {
   return (
    <>
-   <ContactApp/>
+   <NcontactApp/>
    </>
    
   );

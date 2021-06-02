@@ -1,0 +1,34 @@
+<!----setTimeout() method sets a timer which executes a function or specified code when the timer expires---->
+
+<!----setInterval() method exectutes a function or specific code repeatedly based on the given time---->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myData">Let me Guess your Lucky number</p>
+    <button onclick="startTimer()">Start</button>
+    <script>
+        let myData=document.querySelector("#myData");
+        
+        function startTimer(){
+            let num=0;
+            myData.innerHTML=`Loading...`
+            setInterval(()=>{
+                myData.innerHTML=`It is ${num}`;
+                num++;;
+            },1000);
+                
+            
+            
+        }
+
+
+    </script>
+</body>
+</html>

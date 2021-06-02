@@ -1,0 +1,22 @@
+{
+  "name": "NodeJs2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon start.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/register": "^7.13.14",
+    "babel-polyfill": "^6.26.0",
+    "chalk": "^2.4.2",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
